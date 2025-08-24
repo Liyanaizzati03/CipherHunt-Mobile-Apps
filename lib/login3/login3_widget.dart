@@ -21,7 +21,7 @@ class Login3Widget extends StatefulWidget {
   final PlayerStruct? loginpage;
 
   static String routeName = 'Login3';
-  static String routePath = '/login3';
+  static String routePath = '/login';
 
   @override
   State<Login3Widget> createState() => _Login3WidgetState();

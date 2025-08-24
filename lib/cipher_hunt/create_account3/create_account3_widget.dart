@@ -1,5 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/schema/structs/index.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -568,18 +568,18 @@ class _CreateAccount3WidgetState extends State<CreateAccount3Widget>
                                             return;
                                           }
 
-                                          context.pushNamedAuth(
-                                            MainMenuWidget.routeName,
-                                            context.mounted,
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType.fade,
-                                              ),
-                                            },
-                                          );
+                                          await UsersRecord.collection
+                                              .doc(user.uid)
+                                              .update(createUsersRecordData(
+                                                displayName: '',
+                                                email: '',
+                                                photoUrl: '',
+                                                uid: '',
+                                              ));
+
+                                          context.goNamedAuth(
+                                              MainMenuWidget.routeName,
+                                              context.mounted);
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
@@ -679,16 +679,9 @@ class _CreateAccount3WidgetState extends State<CreateAccount3Widget>
                                             return;
                                           }
 
-                                          context.pushNamedAuth(
-                                            Login3Widget.routeName,
-                                            context.mounted,
-                                            queryParameters: {
-                                              'loginpage': serializeParam(
-                                                PlayerStruct(),
-                                                ParamType.DataStruct,
-                                              ),
-                                            }.withoutNulls,
-                                          );
+                                          context.goNamedAuth(
+                                              MainMenuWidget.routeName,
+                                              context.mounted);
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
@@ -768,7 +761,7 @@ class _CreateAccount3WidgetState extends State<CreateAccount3Widget>
                                                   return;
                                                 }
 
-                                                context.pushNamedAuth(
+                                                context.goNamedAuth(
                                                     MainMenuWidget.routeName,
                                                     context.mounted);
                                               },
