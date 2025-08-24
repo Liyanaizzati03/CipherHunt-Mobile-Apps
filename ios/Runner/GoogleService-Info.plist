@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>745477093012-8m9ugstuh631ikhg8sr3nh97ckr80q92.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.745477093012-8m9ugstuh631ikhg8sr3nh97ckr80q92</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>745477093012-16esb7ha841dmj1t9ts3d7sjhu7vjesj.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCcI23XoDcgVpJxoC5LnikFu3FZmOTv1IU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>745477093012</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.liyy.cipherhunt</string>
+	<key>PROJECT_ID</key>
+	<string>cipherhunt-8l4cam</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cipherhunt-8l4cam.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:745477093012:ios:53e4bcee014badbfa82681</string>
+</dict>
+</plist>

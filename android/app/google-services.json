@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "745477093012",
+    "project_id": "cipherhunt-8l4cam",
+    "storage_bucket": "cipherhunt-8l4cam.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745477093012:android:3c508239018e6a9ca82681",
+        "android_client_info": {
+          "package_name": "com.liyy.cipherhunt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "745477093012-16esb7ha841dmj1t9ts3d7sjhu7vjesj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.liyy.cipherhunt",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "745477093012-e9cg1gkg87v37r71vd1lsbqm36idcnnk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVDizP-cZaLzZNSo19Wn1L8Sj-i0UQhuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "745477093012-e9cg1gkg87v37r71vd1lsbqm36idcnnk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "745477093012-8m9ugstuh631ikhg8sr3nh97ckr80q92.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.liyy.cipherhunt"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
