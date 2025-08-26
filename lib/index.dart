@@ -34,7 +34,6 @@ export '/vigenerelevel2/vigenerelevel2_widget.dart' show Vigenerelevel2Widget;
 export '/vigenerelevel3/vigenerelevel3_widget.dart' show Vigenerelevel3Widget;
 export '/vigenerelevel4/vigenerelevel4_widget.dart' show Vigenerelevel4Widget;
 export '/vigenerelevel5/vigenerelevel5_widget.dart' show Vigenerelevel5Widget;
-export '/settings/settings_widget.dart' show SettingsWidget;
 export '/cipher_hunt/confetti_winner_page_v1/confetti_winner_page_v1_widget.dart'
     show ConfettiWinnerPageV1Widget;
 export '/cipher_hunt/confetti_winner_page_c_c5/confetti_winner_page_c_c5_widget.dart'

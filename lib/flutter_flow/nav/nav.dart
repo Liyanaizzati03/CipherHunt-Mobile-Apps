@@ -372,12 +372,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           ),
         ),
         FFRoute(
-          name: SettingsWidget.routeName,
-          path: SettingsWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => SettingsWidget(),
-        ),
-        FFRoute(
           name: ConfettiWinnerPageV1Widget.routeName,
           path: ConfettiWinnerPageV1Widget.routePath,
           requireAuth: true,

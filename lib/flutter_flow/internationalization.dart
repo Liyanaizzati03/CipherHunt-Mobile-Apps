@@ -146,23 +146,19 @@ bool _isSupportedLocale(Locale locale) {
 final kTranslationsMap = <Map<String, Map<String, String>>>[
   // MainMenu
   {
-    '3pwc44f9': {
+    'wuxl8rjt': {
       'en': 'CIPHER HUNT ',
       'ms': '',
     },
-    'tf5gmc2w': {
+    'tm2tqw0c': {
       'en': 'PLAY',
       'ms': '',
     },
-    'gjwv746h': {
-      'en': 'SETTINGS',
-      'ms': '',
-    },
-    'dard6bhr': {
+    '9hu4ryen': {
       'en': 'INFO',
       'ms': '',
     },
-    'auq0j12f': {
+    'crojzapi': {
       'en': 'EXIT\n',
       'ms': '',
     },
@@ -878,38 +874,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ms': '',
     },
     'wjj8o6rm': {
-      'en': 'Home',
-      'ms': '',
-    },
-  },
-  // SETTINGS
-  {
-    'a75t1vnc': {
-      'en': 'Audio Settings',
-      'ms': '',
-    },
-    '8wmntvtp': {
-      'en':
-          'Control background music and sound effects for your gaming experience.',
-      'ms': '',
-    },
-    'seude6nq': {
-      'en': 'Play Music',
-      'ms': '',
-    },
-    'vw52ivyo': {
-      'en': 'Pause Music',
-      'ms': '',
-    },
-    'o6f3jbxk': {
-      'en': 'Sound Effects',
-      'ms': '',
-    },
-    '6y3etymp': {
-      'en': 'SETTINGS',
-      'ms': '',
-    },
-    'z6bzlc74': {
       'en': 'Home',
       'ms': '',
     },
