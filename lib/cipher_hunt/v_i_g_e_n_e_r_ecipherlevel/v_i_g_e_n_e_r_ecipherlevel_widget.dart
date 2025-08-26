@@ -73,7 +73,7 @@ class _VIGENEREcipherlevelWidgetState extends State<VIGENEREcipherlevelWidget> {
             padding: EdgeInsets.all(8.0),
             child: Text(
               FFLocalizations.of(context).getText(
-                'i7xu8an8' /* Choose Level */,
+                'xe5uuoks' /* Choose Level */,
               ),
               style: FlutterFlowTheme.of(context).displayLarge.override(
                     font: GoogleFonts.spaceGrotesk(
@@ -174,7 +174,7 @@ class _VIGENEREcipherlevelWidgetState extends State<VIGENEREcipherlevelWidget> {
                                     alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        '4lznskny' /* LEVEL 1 */,
+                                        'qtz3nyns' /* LEVEL 1 */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .displayMedium
@@ -276,7 +276,7 @@ class _VIGENEREcipherlevelWidgetState extends State<VIGENEREcipherlevelWidget> {
                                         padding: EdgeInsets.all(4.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'yidebce9' /* LEVEL 2 */,
+                                            '5a7meapm' /* LEVEL 2 */,
                                           ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
@@ -383,7 +383,7 @@ class _VIGENEREcipherlevelWidgetState extends State<VIGENEREcipherlevelWidget> {
                                       padding: EdgeInsets.all(4.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'sl9grprf' /* LEVEL 3 */,
+                                          '7m8w5ryd' /* LEVEL 3 */,
                                         ),
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
@@ -490,7 +490,7 @@ class _VIGENEREcipherlevelWidgetState extends State<VIGENEREcipherlevelWidget> {
                                       padding: EdgeInsets.all(4.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'mqlfxp6n' /* LEVEL 4 */,
+                                          'sisu7p2i' /* LEVEL 4 */,
                                         ),
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
@@ -597,7 +597,7 @@ class _VIGENEREcipherlevelWidgetState extends State<VIGENEREcipherlevelWidget> {
                                       padding: EdgeInsets.all(4.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'w7vyyh8p' /* LEVEL 5 */,
+                                          'dmyhrso7' /* LEVEL 5 */,
                                         ),
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)

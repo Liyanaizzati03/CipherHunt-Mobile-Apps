@@ -577,7 +577,7 @@ class _CreateAccount3WidgetState extends State<CreateAccount3Widget>
                                                 uid: '',
                                               ));
 
-                                          context.goNamedAuth(
+                                          context.pushNamedAuth(
                                               MainMenuWidget.routeName,
                                               context.mounted);
                                         },
@@ -679,7 +679,7 @@ class _CreateAccount3WidgetState extends State<CreateAccount3Widget>
                                             return;
                                           }
 
-                                          context.goNamedAuth(
+                                          context.pushNamedAuth(
                                               MainMenuWidget.routeName,
                                               context.mounted);
                                         },
@@ -761,7 +761,7 @@ class _CreateAccount3WidgetState extends State<CreateAccount3Widget>
                                                   return;
                                                 }
 
-                                                context.goNamedAuth(
+                                                context.pushNamedAuth(
                                                     MainMenuWidget.routeName,
                                                     context.mounted);
                                               },

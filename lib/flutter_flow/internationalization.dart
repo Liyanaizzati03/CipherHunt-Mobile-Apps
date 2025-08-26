@@ -173,10 +173,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // cclevel1
   {
-    '95ga3l6r': {
-      'en': 'Caeser Cipher - Level 1',
-      'ms': '',
-    },
     'arn2kzmd': {
       'en': 'WELCOME TO FIRST CHALLENGE!!',
       'ms': '',
@@ -350,27 +346,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // VIGENEREcipherlevel
   {
-    '4lznskny': {
+    'qtz3nyns': {
       'en': 'LEVEL 1',
       'ms': '',
     },
-    'yidebce9': {
+    '5a7meapm': {
       'en': 'LEVEL 2',
       'ms': '',
     },
-    'sl9grprf': {
+    '7m8w5ryd': {
       'en': 'LEVEL 3',
       'ms': '',
     },
-    'mqlfxp6n': {
+    'sisu7p2i': {
       'en': 'LEVEL 4',
       'ms': '',
     },
-    'w7vyyh8p': {
+    'dmyhrso7': {
       'en': 'LEVEL 5',
       'ms': '',
     },
-    'i7xu8an8': {
+    'xe5uuoks': {
       'en': 'Choose Level',
       'ms': '',
     },
@@ -417,10 +413,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // atbashlevel1
   {
-    'g8xne4ka': {
-      'en': 'Atbash Cipher - Level 1',
-      'ms': '',
-    },
     'y3kyg6w4': {
       'en': 'WELCOME TO FIRST CHALLENGE!!',
       'ms': '',
@@ -452,10 +444,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // cclevel2
   {
-    '724psq15': {
-      'en': 'Ceaser Cipher - Level 2',
-      'ms': '',
-    },
     '8an6j7qi': {
       'en': 'LEVEL 2 !',
       'ms': '',
@@ -480,7 +468,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'XYQGBTO',
       'ms': '',
     },
-    'wbp5a2mn': {
+    '3g75i4wq': {
       'en': 'Home',
       'ms': '',
     },
@@ -523,10 +511,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // cclevel3
   {
-    '819q0u2o': {
-      'en': 'Ceaser Cipher - Level 3',
-      'ms': '',
-    },
     'x71x7bcw': {
       'en': 'LEVEL 3 !',
       'ms': '',
@@ -558,10 +542,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // cclevel4
   {
-    '0nycxrbc': {
-      'en': 'Ceaser Cipher - Level 4',
-      'ms': '',
-    },
     'vtrpa5g6': {
       'en': 'LEVEL 4 !',
       'ms': '',
@@ -593,10 +573,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // cclevel5
   {
-    'l0bcfbgv': {
-      'en': 'Ceaser Cipher - Level 5',
-      'ms': '',
-    },
     '22tbp678': {
       'en': 'LEVEL 5 !',
       'ms': '',
@@ -628,10 +604,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // atbashlevel2
   {
-    '7xcwp68c': {
-      'en': 'Atbash Cipher - Level 2',
-      'ms': '',
-    },
     'ln0on448': {
       'en': 'LEVEL 2 !',
       'ms': '',
@@ -663,10 +635,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // atbashlevel3
   {
-    'nalu0g0z': {
-      'en': 'Atbash Cipher - Level 3',
-      'ms': '',
-    },
     'gmbb08a8': {
       'en': 'LEVEL 3 !!',
       'ms': '',
@@ -698,10 +666,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // atbashlevel4
   {
-    '3tgy0byk': {
-      'en': 'Atbash Cipher - Level 4',
-      'ms': '',
-    },
     'mu05b68f': {
       'en': 'LEVEL 4 !',
       'ms': '',
@@ -733,10 +697,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // atbashlevel5
   {
-    '6hkzelra': {
-      'en': 'Atbash Cipher - Level 5',
-      'ms': '',
-    },
     '4401cmdz': {
       'en': 'LEVEL 5 !',
       'ms': '',
@@ -768,10 +728,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // vigenerelevel1
   {
-    '3h60o9md': {
-      'en': 'Vigenere Cipher - Level 1',
-      'ms': '',
-    },
     '73684m3g': {
       'en': 'WELCOME TO FIRST CHALLENGE!!',
       'ms': '',
@@ -803,10 +759,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // vigenerelevel2
   {
-    '3o0m614n': {
-      'en': 'Vigenere Cipher - Level 2',
-      'ms': '',
-    },
     'nh23empw': {
       'en': 'LEVEL 2 !',
       'ms': '',
@@ -838,10 +790,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // vigenerelevel3
   {
-    'xtby5azt': {
-      'en': 'Vigenere Cipher - Level 3',
-      'ms': '',
-    },
     'cfnb6237': {
       'en': 'LEVEL 3 !',
       'ms': '',
@@ -873,10 +821,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // vigenerelevel4
   {
-    'yvraz8d9': {
-      'en': 'Vigenere Cipher - Level 4',
-      'ms': '',
-    },
     '3gnmt40z': {
       'en': 'LEVEL 4 !',
       'ms': '',
@@ -909,10 +853,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // vigenerelevel5
   {
-    'x4opouy0': {
-      'en': 'Vigenere Cipher - Level 5',
-      'ms': '',
-    },
     'rc1r52xg': {
       'en': 'LEVEL 5 !',
       'ms': '',
@@ -1452,10 +1392,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // morsecode4
   {
-    'o6m44sb3': {
-      'en': 'Morse Code - Level 4',
-      'ms': '',
-    },
     'v7r11col': {
       'en': 'LEVEL 4 !',
       'ms': '',
@@ -1487,10 +1423,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // morsecode5
   {
-    'nwwb6rcd': {
-      'en': 'Morse Code - Level 5',
-      'ms': '',
-    },
     'uyyritxz': {
       'en': 'LEVEL 5 !',
       'ms': '',
@@ -1523,10 +1455,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // morsecode3
   {
-    '3nj5jati': {
-      'en': 'Morse Code - Level 3',
-      'ms': '',
-    },
     '2yrmcdi7': {
       'en': 'LEVEL 3 !',
       'ms': '',
@@ -1558,10 +1486,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // morsecode2
   {
-    'l9toxh7b': {
-      'en': 'Morse Code - Level 2',
-      'ms': '',
-    },
     'xze96opk': {
       'en': 'LEVEL 2 !',
       'ms': '',
@@ -1593,10 +1517,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // morsecode1
   {
-    'j3shb3io': {
-      'en': 'Morse Code - Level 1',
-      'ms': '',
-    },
     'kn10rh90': {
       'en': 'WELCOME TO FIRST CHALLENGE!!',
       'ms': '',
@@ -1886,7 +1806,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Sign in here',
       'ms': '',
     },
-    'zvv8m09g': {
+    '6x38juo3': {
       'en': 'Home',
       'ms': '',
     },
@@ -1937,7 +1857,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Sign Up here',
       'ms': '',
     },
-    'ayvy2w42': {
+    'vawy4ot6': {
       'en': 'Home',
       'ms': '',
     },

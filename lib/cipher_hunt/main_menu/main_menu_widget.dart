@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'main_menu_model.dart';
 export 'main_menu_model.dart';
 
@@ -38,7 +39,7 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
         await _model.soundPlayer!.stop();
       }
       _model.soundPlayer!.setVolume(1.0);
-      _model.soundPlayer!
+      await _model.soundPlayer!
           .setAsset('assets/audios/Nevada_-_Vicetone_Nublet_Karaoke.mp3')
           .then((_) => _model.soundPlayer!.play());
     });
@@ -78,13 +79,16 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.all(18.0),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: Image.asset(
-                            'assets/images/ChatGPT_Image_May_11,_2025,_08_39_30_AM.png',
-                            fit: BoxFit.cover,
+                      child: Align(
+                        alignment: AlignmentDirectional(0.0, 1.0),
+                        child: Padding(
+                          padding: EdgeInsets.all(18.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image.asset(
+                              'assets/images/ChatGPT_Image_May_11,_2025,_08_39_30_AM.png',
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
@@ -95,28 +99,41 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
                         child: Padding(
                           padding: EdgeInsets.all(4.0),
                           child: AuthUserStreamWidget(
-                            builder: (context) => Text(
-                              'Welcome${currentUserDisplayName}',
+                            builder: (context) => GradientText(
+                              'Welcome  ${currentUserDisplayName}',
+                              textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
+                                  .displaySmall
                                   .override(
-                                    font: GoogleFonts.roboto(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    fontSize: 24.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
+                                font: GoogleFonts.spaceGrotesk(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .displaySmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .displaySmall
+                                      .fontStyle,
+                                ),
+                                letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .displaySmall
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .displaySmall
+                                    .fontStyle,
+                                shadows: [
+                                  Shadow(
+                                    color: Color(0x2F57636C),
+                                    offset: Offset(2.0, 2.0),
+                                    blurRadius: 2.0,
+                                  )
+                                ],
+                              ),
+                              colors: [
+                                Color(0xFFCDC7EE),
+                                FlutterFlowTheme.of(context).secondary
+                              ],
+                              gradientDirection: GradientDirection.ltr,
+                              gradientType: GradientType.linear,
                             ),
                           ),
                         ),
