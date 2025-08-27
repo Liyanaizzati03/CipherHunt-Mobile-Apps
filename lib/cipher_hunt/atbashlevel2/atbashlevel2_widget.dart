@@ -308,6 +308,9 @@ XS... */
                     _model.timerValue = displayTime;
                     if (shouldUpdate) safeSetState(() {});
                   },
+                  onEnded: () async {
+                    context.safePop();
+                  },
                   textAlign: TextAlign.start,
                   style: FlutterFlowTheme.of(context).headlineSmall.override(
                     font: GoogleFonts.figtree(

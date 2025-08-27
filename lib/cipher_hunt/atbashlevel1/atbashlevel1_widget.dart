@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'atbashlevel1_model.dart';
@@ -41,6 +42,11 @@ class _Atbashlevel1WidgetState extends State<Atbashlevel1Widget>
   void initState() {
     super.initState();
     _model = createModel(context, () => Atbashlevel1Model());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      context.safePop();
+    });
 
     animationsMap.addAll({
       'textOnPageLoadAnimation1': AnimationInfo(

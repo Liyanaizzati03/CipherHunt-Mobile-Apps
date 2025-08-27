@@ -352,6 +352,9 @@ class _Cclevel3WidgetState extends State<Cclevel3Widget>
                                         _model.timerValue = displayTime;
                                         if (shouldUpdate) safeSetState(() {});
                                       },
+                                      onEnded: () async {
+                                        context.safePop();
+                                      },
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
                                           .displaySmall

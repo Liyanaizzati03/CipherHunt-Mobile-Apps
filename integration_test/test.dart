@@ -13,8 +13,6 @@ import 'package:cipher_hunt/flutter_flow/flutter_flow_util.dart';
 
 import 'package:provider/provider.dart';
 import 'package:cipher_hunt/backend/firebase/firebase_config.dart';
-import 'package:cipher_hunt/auth/firebase_auth/auth_util.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -26,7 +24,6 @@ void main() async {
   });
 
   setUp(() async {
-    await authManager.signOut();
     FFAppState.reset();
     final appState = FFAppState();
     await appState.initializePersistedState();
@@ -34,8 +31,7 @@ void main() async {
 
   testWidgets('test1', (WidgetTester tester) async {
     _overrideOnError();
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: 'liyanaz0190@gmail.com', password: 'Liyana098');
+
     await tester.pumpWidget(ChangeNotifierProvider(
       create: (context) => FFAppState(),
       child: MyApp(
@@ -44,19 +40,9 @@ void main() async {
     ));
     await GoogleFonts.pendingFonts();
 
-    await tester.enterText(
-        find.byKey(const ValueKey('emailAddress_ed5o')), 'email');
-    FocusManager.instance.primaryFocus?.unfocus();
-    await tester.enterText(
-        find.byKey(const ValueKey('password_h9hl')), 'password');
-    FocusManager.instance.primaryFocus?.unfocus();
-    await tester.tap(find.byKey(const ValueKey('Button_jpl1')));
-    await tester.pumpAndSettle();
-    expect(find.byKey(const ValueKey('MainMenu_8qfk')), findsWidgets);
     await tester.tap(find.byKey(const ValueKey('PLAY_cxtf')));
     await tester.tap(find.byKey(const ValueKey('INFO_n34g')));
     expect(find.byKey(const ValueKey('info_xltn')), findsWidgets);
-    await tester.tap(find.byKey(const ValueKey('exitApp_6t2t')));
     await tester.tap(find.byKey(const ValueKey('caeser_4v5n')));
     await tester.tap(find.byKey(const ValueKey('Container_xxwx')));
     await tester.tap(find.byKey(const ValueKey('corectOption_qaot')));

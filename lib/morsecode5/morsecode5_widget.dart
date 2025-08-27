@@ -311,6 +311,9 @@ class _Morsecode5WidgetState extends State<Morsecode5Widget>
                           _model.timerValue = displayTime;
                           if (shouldUpdate) safeSetState(() {});
                         },
+                        onEnded: () async {
+                          context.safePop();
+                        },
                         textAlign: TextAlign.start,
                         style:
                             FlutterFlowTheme.of(context).displaySmall.override(

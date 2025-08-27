@@ -158,10 +158,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'INFO',
       'ms': '',
     },
-    'crojzapi': {
-      'en': 'EXIT\n',
-      'ms': '',
-    },
     'ye1aioly': {
       'en': 'Home',
       'ms': '',
@@ -1720,108 +1716,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ms': '',
     },
     'b31vzryb': {
-      'en': 'Home',
-      'ms': '',
-    },
-  },
-  // CreateAccount3
-  {
-    'ur9s13m7': {
-      'en': 'CipherHunt',
-      'ms': '',
-    },
-    'dt1c2qt1': {
-      'en': 'Get Started',
-      'ms': '',
-    },
-    '4uy5mntc': {
-      'en': 'Let\'s get started by filling out the form below.',
-      'ms': '',
-    },
-    'ofi13uhi': {
-      'en': 'Email',
-      'ms': '',
-    },
-    'sgn11j6f': {
-      'en': 'Password',
-      'ms': '',
-    },
-    '63sgur11': {
-      'en': 'Create Account',
-      'ms': '',
-    },
-    'obfrthta': {
-      'en': 'Or sign up with',
-      'ms': '',
-    },
-    'dk3zmq85': {
-      'en': 'Continue with Google',
-      'ms': '',
-    },
-    'er664nue': {
-      'en': 'Continue with Apple',
-      'ms': '',
-    },
-    'i63ybj0m': {
-      'en': ' have an account?  ',
-      'ms': '',
-    },
-    '9c1xclo8': {
-      'en': 'Sign in here',
-      'ms': '',
-    },
-    '6x38juo3': {
-      'en': 'Home',
-      'ms': '',
-    },
-  },
-  // Login3
-  {
-    'wstdqpa6': {
-      'en': 'CipherHunt',
-      'ms': '',
-    },
-    'er5yom0u': {
-      'en': 'Welcome Back',
-      'ms': '',
-    },
-    'if3naoy6': {
-      'en': 'Fill out the information below in order to access your account.',
-      'ms': '',
-    },
-    'fa78bcy5': {
-      'en': 'Email',
-      'ms': '',
-    },
-    'h430bsvl': {
-      'en': 'Password',
-      'ms': '',
-    },
-    '3i94fc2j': {
-      'en': 'Sign In',
-      'ms': '',
-    },
-    'fhripd9v': {
-      'en': 'Or sign in with',
-      'ms': '',
-    },
-    'yhjf4dzd': {
-      'en': 'Continue with Google',
-      'ms': '',
-    },
-    'j334fju8': {
-      'en': 'Continue with Apple',
-      'ms': '',
-    },
-    '53x52sel': {
-      'en': 'Don\'t have an account?  ',
-      'ms': '',
-    },
-    'j627qujn': {
-      'en': 'Sign Up here',
-      'ms': '',
-    },
-    'vawy4ot6': {
       'en': 'Home',
       'ms': '',
     },

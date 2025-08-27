@@ -304,6 +304,9 @@ class _Cclevel2WidgetState extends State<Cclevel2Widget>
                           _model.timerValue = displayTime;
                           if (shouldUpdate) safeSetState(() {});
                         },
+                        onEnded: () async {
+                          context.safePop();
+                        },
                         textAlign: TextAlign.start,
                         style:
                             FlutterFlowTheme.of(context).displaySmall.override(

@@ -308,6 +308,9 @@ class _Vigenerelevel4WidgetState extends State<Vigenerelevel4Widget>
                           _model.timerValue = displayTime;
                           if (shouldUpdate) safeSetState(() {});
                         },
+                        onEnded: () async {
+                          context.safePop();
+                        },
                         textAlign: TextAlign.start,
                         style:
                             FlutterFlowTheme.of(context).displaySmall.override(

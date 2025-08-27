@@ -6,8 +6,6 @@ import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 
-import '/auth/base_auth_user_provider.dart';
-
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
@@ -28,46 +26,7 @@ class AppStateNotifier extends ChangeNotifier {
   static AppStateNotifier? _instance;
   static AppStateNotifier get instance => _instance ??= AppStateNotifier._();
 
-  BaseAuthUser? initialUser;
-  BaseAuthUser? user;
   bool showSplashImage = true;
-  String? _redirectLocation;
-
-  /// Determines whether the app will refresh and build again when a sign
-  /// in or sign out happens. This is useful when the app is launched or
-  /// on an unexpected logout. However, this must be turned off when we
-  /// intend to sign in/out and then navigate or perform any actions after.
-  /// Otherwise, this will trigger a refresh and interrupt the action(s).
-  bool notifyOnAuthChange = true;
-
-  bool get loading => user == null || showSplashImage;
-  bool get loggedIn => user?.loggedIn ?? false;
-  bool get initiallyLoggedIn => initialUser?.loggedIn ?? false;
-  bool get shouldRedirect => loggedIn && _redirectLocation != null;
-
-  String getRedirectLocation() => _redirectLocation!;
-  bool hasRedirect() => _redirectLocation != null;
-  void setRedirectLocationIfUnset(String loc) => _redirectLocation ??= loc;
-  void clearRedirectLocation() => _redirectLocation = null;
-
-  /// Mark as not needing to notify on a sign in / out when we intend
-  /// to perform subsequent actions (such as navigation) afterwards.
-  void updateNotifyOnAuthChange(bool notify) => notifyOnAuthChange = notify;
-
-  void update(BaseAuthUser newUser) {
-    final shouldUpdate =
-        user?.uid == null || newUser.uid == null || user?.uid != newUser.uid;
-    initialUser ??= newUser;
-    user = newUser;
-    // Refresh the app on auth change unless explicitly marked otherwise.
-    // No need to update unless the user has changed.
-    if (notifyOnAuthChange && shouldUpdate) {
-      notifyListeners();
-    }
-    // Once again mark the notifier as needing to update on auth change
-    // (in order to catch sign in / out events).
-    updateNotifyOnAuthChange(true);
-  }
 
   void stopShowingSplashImage() {
     showSplashImage = false;
@@ -83,28 +42,42 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) => _RouteErrorBuilder(
         state: state,
-        child: appStateNotifier.loggedIn
-            ? entryPage ?? MainMenuWidget()
-            : CreateAccount3Widget(),
+        child: appStateNotifier.showSplashImage
+            ? Builder(
+                builder: (context) => Container(
+                  color: FlutterFlowTheme.of(context).tertiary,
+                  child: Image.asset(
+                    'assets/images/ChatGPT_Image_May_11,_2025,_08_39_30_AM.png',
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              )
+            : entryPage ?? MainMenuWidget(),
       ),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? entryPage ?? MainMenuWidget()
-              : CreateAccount3Widget(),
+          builder: (context, _) => appStateNotifier.showSplashImage
+              ? Builder(
+                  builder: (context) => Container(
+                    color: FlutterFlowTheme.of(context).tertiary,
+                    child: Image.asset(
+                      'assets/images/ChatGPT_Image_May_11,_2025,_08_39_30_AM.png',
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                )
+              : entryPage ?? MainMenuWidget(),
         ),
         FFRoute(
           name: MainMenuWidget.routeName,
           path: MainMenuWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => MainMenuWidget(),
         ),
         FFRoute(
           name: Cclevel1Widget.routeName,
           path: Cclevel1Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Cclevel1Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -123,37 +96,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: CaesercipherlevelWidget.routeName,
           path: CaesercipherlevelWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => CaesercipherlevelWidget(),
         ),
         FFRoute(
           name: CategoriesPagesWidget.routeName,
           path: CategoriesPagesWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => CategoriesPagesWidget(),
         ),
         FFRoute(
           name: InfoWidget.routeName,
           path: InfoWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => InfoWidget(),
         ),
         FFRoute(
           name: AtbashCipherLevelWidget.routeName,
           path: AtbashCipherLevelWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => AtbashCipherLevelWidget(),
         ),
         FFRoute(
           name: VIGENEREcipherlevelWidget.routeName,
           path: VIGENEREcipherlevelWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => VIGENEREcipherlevelWidget(),
         ),
         FFRoute(
           name: ConfettiWinnerPagecc1Widget.routeName,
           path: ConfettiWinnerPagecc1Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPagecc1Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -164,7 +131,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: Atbashlevel1Widget.routeName,
           path: Atbashlevel1Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Atbashlevel1Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -179,7 +145,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: Cclevel2Widget.routeName,
           path: Cclevel2Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Cclevel2Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -190,7 +155,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: ConfettiWinnerPageab1Widget.routeName,
           path: ConfettiWinnerPageab1Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageab1Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -201,25 +165,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: Cclevel3Widget.routeName,
           path: Cclevel3Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Cclevel3Widget(),
         ),
         FFRoute(
           name: Cclevel4Widget.routeName,
           path: Cclevel4Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Cclevel4Widget(),
         ),
         FFRoute(
           name: Cclevel5Widget.routeName,
           path: Cclevel5Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Cclevel5Widget(),
         ),
         FFRoute(
           name: Atbashlevel2Widget.routeName,
           path: Atbashlevel2Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Atbashlevel2Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -234,7 +194,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: Atbashlevel3Widget.routeName,
           path: Atbashlevel3Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Atbashlevel3Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -249,7 +208,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: Atbashlevel4Widget.routeName,
           path: Atbashlevel4Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Atbashlevel4Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -264,7 +222,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: Atbashlevel5Widget.routeName,
           path: Atbashlevel5Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Atbashlevel5Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -279,7 +236,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: Vigenerelevel1Widget.routeName,
           path: Vigenerelevel1Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Vigenerelevel1Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -298,7 +254,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: Vigenerelevel2Widget.routeName,
           path: Vigenerelevel2Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Vigenerelevel2Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -317,7 +272,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: Vigenerelevel3Widget.routeName,
           path: Vigenerelevel3Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Vigenerelevel3Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -336,7 +290,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: Vigenerelevel4Widget.routeName,
           path: Vigenerelevel4Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Vigenerelevel4Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -355,7 +308,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: Vigenerelevel5Widget.routeName,
           path: Vigenerelevel5Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Vigenerelevel5Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -374,7 +326,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: ConfettiWinnerPageV1Widget.routeName,
           path: ConfettiWinnerPageV1Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageV1Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -385,31 +336,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: ConfettiWinnerPageCC5Widget.routeName,
           path: ConfettiWinnerPageCC5Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageCC5Widget(),
         ),
         FFRoute(
           name: ConfettiWinnerPageCC4Widget.routeName,
           path: ConfettiWinnerPageCC4Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageCC4Widget(),
         ),
         FFRoute(
           name: ConfettiWinnerPageCC3Widget.routeName,
           path: ConfettiWinnerPageCC3Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageCC3Widget(),
         ),
         FFRoute(
           name: ConfettiWinnerPageaCC2Widget.routeName,
           path: ConfettiWinnerPageaCC2Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageaCC2Widget(),
         ),
         FFRoute(
           name: ConfettiWinnerPageab5Widget.routeName,
           path: ConfettiWinnerPageab5Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageab5Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -420,7 +366,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: ConfettiWinnerPageab4Widget.routeName,
           path: ConfettiWinnerPageab4Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageab4Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -431,7 +376,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: ConfettiWinnerPageab3Widget.routeName,
           path: ConfettiWinnerPageab3Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageab3Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -442,7 +386,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: ConfettiWinnerPageab2Widget.routeName,
           path: ConfettiWinnerPageab2Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageab2Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -453,13 +396,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: ConfettiWinnerPageV3Widget.routeName,
           path: ConfettiWinnerPageV3Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageV3Widget(),
         ),
         FFRoute(
           name: ConfettiWinnerPageV5Widget.routeName,
           path: ConfettiWinnerPageV5Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageV5Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -470,7 +411,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: ConfettiWinnerPageV4Widget.routeName,
           path: ConfettiWinnerPageV4Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageV4Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -481,7 +421,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: ConfettiWinnerPageV2Widget.routeName,
           path: ConfettiWinnerPageV2Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageV2Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -492,7 +431,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: Morsecode4Widget.routeName,
           path: Morsecode4Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Morsecode4Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -511,7 +449,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: Morsecode5Widget.routeName,
           path: Morsecode5Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Morsecode5Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -530,7 +467,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: Morsecode3Widget.routeName,
           path: Morsecode3Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Morsecode3Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -549,7 +485,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: Morsecode2Widget.routeName,
           path: Morsecode2Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Morsecode2Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -568,7 +503,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: Morsecode1Widget.routeName,
           path: Morsecode1Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => Morsecode1Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -587,7 +521,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: ConfettiWinnerPageMC1Widget.routeName,
           path: ConfettiWinnerPageMC1Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageMC1Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -598,7 +531,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: ConfettiWinnerPageMC2Widget.routeName,
           path: ConfettiWinnerPageMC2Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageMC2Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -609,7 +541,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: ConfettiWinnerPageMC3Widget.routeName,
           path: ConfettiWinnerPageMC3Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageMC3Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -620,7 +551,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: ConfettiWinnerPageMC4Widget.routeName,
           path: ConfettiWinnerPageMC4Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageMC4Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -631,7 +561,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: ConfettiWinnerPageMC5Widget.routeName,
           path: ConfettiWinnerPageMC5Widget.routePath,
-          requireAuth: true,
           builder: (context, params) => ConfettiWinnerPageMC5Widget(
             correctOption: params.getParam(
               'correctOption',
@@ -642,25 +571,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: MsCipherlevelWidget.routeName,
           path: MsCipherlevelWidget.routePath,
-          requireAuth: true,
           builder: (context, params) => MsCipherlevelWidget(),
-        ),
-        FFRoute(
-          name: CreateAccount3Widget.routeName,
-          path: CreateAccount3Widget.routePath,
-          builder: (context, params) => CreateAccount3Widget(),
-        ),
-        FFRoute(
-          name: Login3Widget.routeName,
-          path: Login3Widget.routePath,
-          builder: (context, params) => Login3Widget(
-            loginpage: params.getParam(
-              'loginpage',
-              ParamType.DataStruct,
-              isList: false,
-              structBuilder: PlayerStruct.fromSerializableMap,
-            ),
-          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -674,40 +585,6 @@ extension NavParamExtensions on Map<String, String?> {
 }
 
 extension NavigationExtensions on BuildContext {
-  void goNamedAuth(
-    String name,
-    bool mounted, {
-    Map<String, String> pathParameters = const <String, String>{},
-    Map<String, String> queryParameters = const <String, String>{},
-    Object? extra,
-    bool ignoreRedirect = false,
-  }) =>
-      !mounted || GoRouter.of(this).shouldRedirect(ignoreRedirect)
-          ? null
-          : goNamed(
-              name,
-              pathParameters: pathParameters,
-              queryParameters: queryParameters,
-              extra: extra,
-            );
-
-  void pushNamedAuth(
-    String name,
-    bool mounted, {
-    Map<String, String> pathParameters = const <String, String>{},
-    Map<String, String> queryParameters = const <String, String>{},
-    Object? extra,
-    bool ignoreRedirect = false,
-  }) =>
-      !mounted || GoRouter.of(this).shouldRedirect(ignoreRedirect)
-          ? null
-          : pushNamed(
-              name,
-              pathParameters: pathParameters,
-              queryParameters: queryParameters,
-              extra: extra,
-            );
-
   void safePop() {
     // If there is only one route on the stack, navigate to the initial
     // page instead of popping.
@@ -717,19 +594,6 @@ extension NavigationExtensions on BuildContext {
       go('/');
     }
   }
-}
-
-extension GoRouterExtensions on GoRouter {
-  AppStateNotifier get appState => AppStateNotifier.instance;
-  void prepareAuthEvent([bool ignoreRedirect = false]) =>
-      appState.hasRedirect() && !ignoreRedirect
-          ? null
-          : appState.updateNotifyOnAuthChange(false);
-  bool shouldRedirect(bool ignoreRedirect) =>
-      !ignoreRedirect && appState.hasRedirect();
-  void clearRedirectLocation() => appState.clearRedirectLocation();
-  void setRedirectLocationIfUnset(String location) =>
-      appState.updateNotifyOnAuthChange(false);
 }
 
 extension _GoRouterStateExtensions on GoRouterState {
@@ -824,19 +688,6 @@ class FFRoute {
   GoRoute toRoute(AppStateNotifier appStateNotifier) => GoRoute(
         name: name,
         path: path,
-        redirect: (context, state) {
-          if (appStateNotifier.shouldRedirect) {
-            final redirectLocation = appStateNotifier.getRedirectLocation();
-            appStateNotifier.clearRedirectLocation();
-            return redirectLocation;
-          }
-
-          if (requireAuth && !appStateNotifier.loggedIn) {
-            appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/createAccount3';
-          }
-          return null;
-        },
         pageBuilder: (context, state) {
           fixStatusBarOniOS16AndBelow(context);
           final ffParams = FFParameters(state, asyncParams);
@@ -846,15 +697,7 @@ class FFRoute {
                   builder: (context, _) => builder(context, ffParams),
                 )
               : builder(context, ffParams);
-          final child = appStateNotifier.loading
-              ? Container(
-                  color: FlutterFlowTheme.of(context).tertiary,
-                  child: Image.asset(
-                    'assets/images/ChatGPT_Image_May_11,_2025,_08_39_30_AM.png',
-                    fit: BoxFit.contain,
-                  ),
-                )
-              : page;
+          final child = page;
 
           final transitionInfo = state.transitionInfo;
           return transitionInfo.hasTransition
